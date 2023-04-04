@@ -1,0 +1,23 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "This repo is for practicing the unit testing for JavaScripte",
+  "main": "function..js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emhamza/Testing-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emhamza/Testing-practice/issues"
+  },
+  "homepage": "https://github.com/emhamza/Testing-practice#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
