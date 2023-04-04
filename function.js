@@ -1,20 +1,12 @@
-class calculator {
-    add(x,y) {
-        return x + y;
+const capitalize = (string) => {
+    if(typeof string !== 'string'){
+        throw new Error('Input must be a string');
     }
-    subtract(x,y) {
-        return x - y;
+    if(string.length === 0) {
+        return '';
     }
-    multiply(x,y) {
-        return x * y;
-    }
-    divide(x,y) {
-        if (y === 0){
-            throw new Error('Cannot divide by zero'); 
-        }
-        return x / y;
-    }
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-module.exports = calculator;
+module.exports = capitalize;
 
