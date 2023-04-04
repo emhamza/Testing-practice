@@ -1,62 +1,22 @@
-const Calculator = require('./function');
+const capitalize = require('./function');
 
-describe('calcultor', () => {
-    let calculator;
-
-    beforeEach(() => {
-        calculator = new Calculator();
+describe('capitalize', () => {
+    it('capitalize the first letter of a string', () => {
+        expect(capitalize('hello')).toBe('Hello');
+        expect(capitalize('hamza')).toBe('Hamza');
     });
-
-    describe('add', () => {
-        test('adds two positive numbers', () => {
-        expect(calculator.add(2, 3)).toBe(5);
-        });
-
-        test('adds a positive and a negative number', () => {
-        expect(calculator.add(2, -3)).toBe(-1);
-        });
-
-        test('adds two negative numbers', () => {
-        expect(calculator.add(-2, -3)).toBe(-5);
-        });
+    it('return an empty string if the input is empty', () => {
+        expect(capitalize('')).toBe('');
     });
-    describe('subtract', () => {
-        test('subtract two positive numbers', () => {
-          expect(calculator.subtract(5, 2)).toBe(3);
-        });
-    
-        test('subtract a positive and a negative number', () => {
-          expect(calculator.subtract(5, -2)).toBe(7);
-        });
-    
-        test('subtract two negative numbers', () => {
-          expect(calculator.subtract(-2, -3)).toBe(1);
-        });
-      });
-    describe('multiply', () => {
-        test('subtract two positive numbers', () => {
-          expect(calculator.multiply(5, 2)).toBe(10);
-        });
-    
-        test('multiply a positive and a negative number', () => {
-          expect(calculator.multiply(5, -2)).toBe(-10);
-        });
-    
-        test('multiply two negative numbers', () => {
-          expect(calculator.multiply(-2, -3)).toBe(6);
-        });
-      });
-    describe('divide', () => {
-        test('divide two positive numbers', () => {
-          expect(calculator.divide(10, 2)).toBe(5);
-        });
-    
-        test('divide a positive and a negative number', () => {
-          expect(calculator.divide(10, -2)).toBe(-5);
-        });
-    
-        test('divide two negative numbers', () => {
-          expect(calculator.divide(-10, -2)).toBe(5);
-        });
+    it('retrun the input if the first letters is already capitalized', () => {
+        expect(capitalize('Hello')).toBe('Hello');
+        expect(capitalize('Hamza')).toBe('Hamza');
+    });
+    it('throw an error if the input is not a sting', () => {
+        expect(() => capitalize(null)).toThrow();
+        expect(() => capitalize(undefined)).toThrow();
+        expect(() => capitalize(123)).toThrow();
+        expect(() => capitalize({})).toThrow();
+        expect(() => capitalize([])).toThrow();
     });
 });
